@@ -190,27 +190,18 @@
 
         /* Team & Tools Section */
         .team-tools-grid { display: grid; gap: 3rem; }
-        .team-member-card {
-            background-color: #1f2937; /* bg-gray-800 */
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: box-shadow 0.3s ease;
+        .team-member-linkedin-link {
+            color: #7dd3fc; /* text-sky-300 (brighter for links) */
+            font-size: 1.125rem; /* A bit larger for prominent display */
+            font-weight: 500;
+            padding: 0.25rem 0;
+            display: block; /* Make them block for easier stacking */
+            text-align: center;
         }
-        .team-member-card:hover { box-shadow: 0 0 15px rgba(56, 189, 248, 0.3); /* hover:shadow-sky-500/30 approximation */ }
-        .team-avatar {
-            width: 4rem; height: 4rem; background-color: #0ea5e9; /* bg-sky-500 */
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; font-weight: 700; color: white; flex-shrink: 0;
+        .team-member-linkedin-link:hover {
+            color: #38bdf8; /* text-sky-400 */
+            text-decoration: underline;
         }
-        .team-member-name { font-size: 1.25rem; font-weight: 600; color: white; }
-        .team-member-role { color: #38bdf8; /* text-sky-400 */ }
-        .team-member-linkedin { font-size: 0.875rem; color: #9ca3af; }
-        .team-member-linkedin:hover { color: #7dd3fc; }
 
         .tech-tags-container { display: flex; flex-wrap: wrap; gap: 0.75rem; }
         .tech-tag {
@@ -435,40 +426,14 @@
                 <div class="team-tools-grid">
                     <div>
                         <h4 class="solution-card-title text-sky-300" style="margin-bottom: 1.5rem; text-align: center;">Our Innovators</h4>
-                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                            <div class="team-member-card">
-                                <div class="team-avatar">AS</div>
-                                <div>
-                                    <h5 class="team-member-name">Aisha Sharma</h5>
-                                    <p class="team-member-role">AI Lead & Face Recognition Expert</p>
-                                    <a href="https://linkedin.com/in/example-aisha" target="_blank" rel="noopener noreferrer" class="team-member-linkedin">LinkedIn Profile →</a>
-                                </div>
-                            </div>
-                            <div class="team-member-card">
-                                <div class="team-avatar">RV</div>
-                                <div>
-                                    <h5 class="team-member-name">Rohan Verma</h5>
-                                    <p class="team-member-role">Vehicle Recognition & OCR Specialist</p>
-                                    <a href="https://linkedin.com/in/example-rohan" target="_blank" rel="noopener noreferrer" class="team-member-linkedin">LinkedIn Profile →</a>
-                                </div>
-                            </div>
-                            <div class="team-member-card">
-                                <div class="team-avatar">PS</div>
-                                <div>
-                                    <h5 class="team-member-name">Priya Singh</h5>
-                                    <p class="team-member-role">Backend & Kafka Integration</p>
-                                    <a href="https://linkedin.com/in/example-priya" target="_blank" rel="noopener noreferrer" class="team-member-linkedin">LinkedIn Profile →</a>
-                                </div>
-                            </div>
-                             <div class="team-member-card">
-                                <div class="team-avatar">VP</div>
-                                <div>
-                                    <h5 class="team-member-name">Vikram Patel</h5>
-                                    <p class="team-member-role">Frontend & Deployment (Jetson)</p>
-                                    <a href="https://linkedin.com/in/example-vikram" target="_blank" rel="noopener noreferrer" class="team-member-linkedin">LinkedIn Profile →</a>
-                                </div>
-                            </div>
+                        <!-- START OF UPDATED TEAM DISPLAY -->
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem; align-items: center;">
+                            <a href="https://www.linkedin.com/in/sritej-reddy-1514b4238" target="_blank" rel="noopener noreferrer" class="team-member-linkedin-link">Sritej Reddy</a>
+                            <a href="https://www.linkedin.com/in/asapanna-rakesh" target="_blank" rel="noopener noreferrer" class="team-member-linkedin-link">Rakesh Asapanna</a>
+                            <a href="https://www.linkedin.com/in/jaganramjaswanth" target="_blank" rel="noopener noreferrer" class="team-member-linkedin-link">Jagan Ram Jaswant</a>
+                            <a href="https://www.linkedin.com/in/teja-saraswathula" target="_blank" rel="noopener noreferrer" class="team-member-linkedin-link">Sai Divya Teja Saraswathula</a>
                         </div>
+                        <!-- END OF UPDATED TEAM DISPLAY -->
                     </div>
                     <div>
                         <h4 class="solution-card-title text-sky-300" style="margin-bottom: 1.5rem; text-align: center;">Technologies Powering Our Solution</h4>
@@ -505,6 +470,7 @@
                         Email Us
                     </a>
                 </div>
+                 <!-- START OF UPDATED CONTACT LINKEDIN LIST -->
                  <div class="contact-linkedin-links">
                     <p>Connect with team members on LinkedIn:</p>
                     <div>
@@ -514,6 +480,7 @@
                         <a href="https://www.linkedin.com/in/teja-saraswathula" target="_blank" rel="noopener noreferrer">Sai Divya Teja Saraswathula</a>
                     </div>
                 </div>
+                <!-- END OF UPDATED CONTACT LINKEDIN LIST -->
             </div>
         </section>
     </main>
@@ -540,7 +507,7 @@
         const mobileMenuButton = document.querySelector('.mobile-menu-button');
         const navLinksContainer = document.querySelector('.navbar .nav-links');
         if (mobileMenuButton && navLinksContainer) {
-            mobileMenuButton.addEventListener('click', () => {
+            mobileMenuButton.addEventListener('click', () => { // Fixed arrow function syntax
                 // This is a very basic toggle, for a real app use a class to manage state
                 if (navLinksContainer.style.display === 'flex') {
                     navLinksContainer.style.display = 'none';
